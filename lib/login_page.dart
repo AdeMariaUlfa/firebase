@@ -6,6 +6,7 @@ import 'package:firebase/sign_in.dart';
 import 'package:firebase/first_screen.dart';
 import 'package:firebase/auth.dart';
 import 'register_page.dart';
+import 'first_screen_user.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -150,8 +151,10 @@ class _LoginPageState extends State<LoginPage> {
           authHandler
               .handleSignInEmail(emailController.text, passwordController.text)
               .then((User user) {
-            Navigator.push(context,
-                new MaterialPageRoute(builder: (context) => new FirstScreen()));
+            Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => new FirstScreenUser()));
           }).catchError((e) => print(e));
         },
         child: Text(
